@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Custom Sliders</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./css/custom_slider.css">
+		<style>
+		#slides-holder-1 {
+			top: 5px;
+		}
+		#slides-holder-2 {
+			top: 40px;
+		}
+
+		#slides-holder-1 .slider .title, #slides-holder-1 .slider .dots {
+			background-color: #180c4b;
+		}
+		#slides-holder-2 .slider .title, #slides-holder-2 .slider .dots {
+			background-color: #14131a;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div id="slides-holder-1" class="slides-holder col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5">
+					<div class="slider" id="slider1"></div>
+				</div>
+
+				<div id="slides-holder-2" class="slides-holder col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-12 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5">
+					<div class="slider" id="slider2"></div>
+				</div>
+			</div>
+		</div>
+
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>    
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.js"></script>  
+        <script src="http://hammerjs.github.io/dist/hammer.min.js" type="text/javascript"></script>
+		<script src="./js/custom_slider.js"></script>
+		<script>
+		var $slider1 = $('#slider1');
+		var $slider2 = $('#slider2');
+    	var images   = [
+    		'https://raw.githubusercontent.com/atabegruslan/Others/master/Illustrations/jsfiddle/1.PNG',
+    		'https://raw.githubusercontent.com/atabegruslan/Others/master/Illustrations/jsfiddle/2.PNG',
+    		'https://raw.githubusercontent.com/atabegruslan/Others/master/Illustrations/jsfiddle/3.PNG',
+    		'https://raw.githubusercontent.com/atabegruslan/Others/master/Illustrations/jsfiddle/4.PNG',
+    		'https://raw.githubusercontent.com/atabegruslan/Others/master/Illustrations/jsfiddle/5.PNG'
+    	];
+
+		var firstHalfPictures  = images.slice( 0 , images.length/2 );
+		var latterHalfPictures = images.slice( images.length/2 , images.length );
+
+		$slider1.slider
+		({
+			title: "pictures ...",
+			fade: 500,
+			pictures: firstHalfPictures
+		});		
+
+		$slider2.slider
+		({
+			title: "... and more",
+			fade: 350,
+			pictures: latterHalfPictures
+		});	
+		</script>
+	</body>
+</html>
